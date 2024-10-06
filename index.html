@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .text::before{
+            animation : text 8s linear infinite;
+            content:"";
+        }
+        .color::before{
+            animation : colortext 8s linear infinite;
+            content:"";
+        }
+        .coordinates::before{
+            content:"";
+            animation : coordinates 8s linear infinite;
+        }
+        .shape{
+            height:100px;
+            width:100px;
+            position:absolute;
+            top:50%;
+            left:50%;
+            background-color: aqua;
+            display: flex;
+            flex-direction: column;
+            justify-content:center;
+            align-items: center;
+            animation-name:move;
+            animation-duration: 8s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+        @keyframes move{
+            0%{transform:rotate(0deg) translate(150px) rotate(0deg);}
+            25%{width:200px; border-radius:0%; background-color: chartreuse;}
+            50%{border-radius: 50%; width:100px;background-color: crimson;}
+            75%{border-radius: 50%; width:200px; background-color: gold;}
+            100%{transform:rotate(360deg) translate(150px) rotate(-360deg);}
+        }
+        @keyframes text{
+            0%{content:"square"}
+            25%{content:"rectangle"}
+            50%{content:"circle"}
+            75%{content:"oval"}
+            100%{content:"square"}
+        }
+        @keyframes colortext{
+            0%{content:"color:blue"}
+            25%{content:"color:green"}
+            50%{content:"color:red"}
+            75%{content:"color:gold"}
+            100%{content:"color:blue"}
+        }
+        @keyframes coordinates{
+            0%{content:"(150,0)"}
+            25%{content:"(0,-150)"}
+            50%{content:"(-150,0)"}
+            75%{content:"(0,150)"}
+            100%{content:"(150,0)"}
+        }
+
+    </style>
+</head>
+<body>
+    <div class="shape">
+        <sec class="text"></sec>
+        <br>
+        <sec class="color"></sec>
+        <sec class="coordinates"></sec>
+    </div>
+</body>
+</html>
